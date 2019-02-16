@@ -23,6 +23,7 @@ router.post("/", function(req, res) {
   console.log("1 record inserted");
   });
   
+  res.send()
   
 });
 
