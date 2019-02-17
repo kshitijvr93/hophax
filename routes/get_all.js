@@ -16,8 +16,8 @@ router.get("/", function(req, res) {
     if (err) throw err;
     
     result.forEach(function(element) {
-    response[element.id]  = {
-      recipe_name: element.recipe_name , recipe: element.recipe, instructions: element.instructions, ingredients: element.ingredients
+    response[element.recipe_name]  = {
+      id: element.id 
     };
     
     });
