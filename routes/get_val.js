@@ -6,14 +6,16 @@ var http = require("http");
 var https = require("https");
 
 
-router.get("/:rec_name", function(req, res) {
+router.get("/:rec_id", function(req, res) {
 
     let pricevalue = 0;
     var response = { };
-    con.query("SELECT * FROM recipe where recipe_name LIKE '%"+ req.params.rec_name+"%'", function (err, result) {
+    con.query("SELECT * FROM recipe where id = "+ req.params.rec_id, function (err, result) {
     if (err) throw err;
     if(result.length == 0){
+      res.status(404)
       res.send();
+      return;
     }
     element = result[0];
     
