@@ -9,6 +9,7 @@ var https = require("https");
 router.get("/:rec_id", function(req, res) {
 
     let pricevalue = 0;
+    let store_id = req.query.store_id
     var response = { };
     con.query("SELECT * FROM recipe where id = "+ req.params.rec_id, function (err, result) {
     if (err) throw err;
@@ -32,7 +33,7 @@ router.get("/:rec_id", function(req, res) {
     element_list.forEach(function(vals){
       
       var url = 'http://search.mobile.walmart.com/search?query='
-      url = url + encodeURI(vals)+'&store=2045'
+      url = url + encodeURI(vals)+'&store='+store_id
       url = encodeURI(url);
       console.log(url);
 
