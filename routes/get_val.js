@@ -65,7 +65,7 @@ router.get("/:rec_id", function(req, res) {
           if(counter == numOfReq){
             console.log(pricevalue);
             pricevalue = pricevalue/100;
-            res.send("price: $" + pricevalue.toString() + '\n' + response.recipe);
+            res.send("Price: $" + pricevalue.toString() + '\n\n' + response.recipe);
           }
           
         

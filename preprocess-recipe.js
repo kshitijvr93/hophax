@@ -51,10 +51,12 @@ function parseIngredient(line){
 }
 
 function makeRecipe(recipe){
-    let result = 'ingredients: \n'
+    let result = 'Ingredients: \n'
     recipe['ingredients'].forEach(function(line){
-        result = result + line + '\n'
+        result = result + line.replace(/ADVERTISEMENT/g, '') + '\n'
     })
+    result += 'Instructions: \n'
     result += recipe['instructions']
+    console.log(result)
     return result
 }
