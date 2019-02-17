@@ -3,13 +3,19 @@ var router = express.Router();
 var mysql = require('mysql')
 var bodyParser = require("body-parser");
 
+// var con = mysql.createConnection({
+//   host: "hophax.clgzlgbn10dv.us-east-1.rds.amazonaws.com",
+//   user: "rootuser",
+//   password: "rootpassword",
+//   database: "hophax"
+// });
+
 var con = mysql.createConnection({
-  host: "hophax.clgzlgbn10dv.us-east-1.rds.amazonaws.com",
-  user: "rootuser",
-  password: "rootpassword",
+  host: "localhost",
+  user: "root",
+  password: "",
   database: "hophax"
 });
-
 
 // Body Parser Middleware
 
