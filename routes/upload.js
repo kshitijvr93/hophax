@@ -16,7 +16,6 @@ var con = mysql.createConnection({
 router.use(bodyParser.json());
 
 router.post("/", function(req, res) {
-
   var sql = "INSERT INTO recipe(recipe_name,recipe,instructions,ingredients) VALUES ('"+req.body.recipe_name+"','"+req.body.recipe+"','"+ req.body.instructions+"','"+ req.body.ingredients+"' )";
   con.query(sql, function (err, result) {
   if (err) throw err;
