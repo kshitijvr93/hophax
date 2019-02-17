@@ -11,7 +11,8 @@ router.get("/", function(req, res) {
 
     
     var response = { };
-    con.query("SELECT LIMIT 50 * FROM recipe", function (err, result) {
+    var num = 50;
+    con.query("SELECT * FROM recipe limit "+num, function (err, result) {
     if (err) throw err;
     
     result.forEach(function(element) {
@@ -22,7 +23,10 @@ router.get("/", function(req, res) {
     });
     res.json(response);
   });
+
+});
     
+
 
 
   module.exports = router;
