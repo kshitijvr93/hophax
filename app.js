@@ -5,6 +5,7 @@ var bodyParser = require("body-parser");
 var indexRouter = require('./routes/index');
 var uploadRouter = require('./routes/upload');
 var downloadRouter = require('./routes/get_val');
+var groceryRouter = require('./routes/get_groc');
 
 var app = express();
 
@@ -22,6 +23,7 @@ app.use(bodyParser.json())
 app.use('/', indexRouter);
 app.use('/api/upload', uploadRouter);
 app.use('/api/get_val', downloadRouter);
+app.use('/api/get_groc', groceryRouter);
 
 
 
