@@ -15,7 +15,7 @@ var app = express();
 app.use(bodyParser.urlencoded({
   extended: true
 }));
-app.use(bodyParser.json())
+app.use(bodyParser.json());
 
 
 
@@ -26,7 +26,7 @@ app.use('/api/get_val', downloadRouter);
 //app.use('/api/get_groc', groceryRouter);
 
 
-
+app.set('view engine', 'jade');
 
 
 // catch 404 and forward to error handler

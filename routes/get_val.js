@@ -6,6 +6,8 @@ var http = require("http");
 var https = require("https");
 
 
+  
+
 router.get("/:rec_name", function(req, res) {
 
     let pricevalue = 0;
